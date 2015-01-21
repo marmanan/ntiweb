@@ -1,0 +1,77 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title KDJ Indicator - Ninjatrader indicators
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="description", content="KDJ Indicator free for ninjatrader. Indicator for detect trend changes.")
+		meta(name="author", content="ntindicators")
+		
+		link(href="/css/bootstrap.min.css",rel="stylesheet")
+		link(href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css",rel="stylesheet")
+		<!--[if IE 7]>
+		link(rel="stylesheet", href="/css/font-awesome-ie7.min.css")
+		<![endif]-->
+		link(rel="stylesheet",type="text/css",href="/css/style.css")
+		<!--[if lt IE 9]>
+		script(src="/js/html5.js")
+		<![endif]-->
+
+		link(rel="apple-touch-icon-precomposed", sizes="144x144", href="/img/sample/logo-144.png")
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/sample/logo-114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/sample/logo-72.png">
+		<link rel="apple-touch-icon-precomposed" href="/img/sample/logo-57.png">
+		<link rel="shortcut icon" href="/img/sample/logo.png">
+
+	body
+		include ../jade-includes/navbar
+		div.clear
+		
+		div(class="container-wrapper container-top container-wrapper-sunset")
+			div.container
+				div.row
+					div(class="col-md-12 summary center")
+						h1 KDJ Indicator
+		div.container
+			div(class="row row-tiles")
+				div.col-md-12
+					include ../jade-includes/adsense1
+			div(class="row row-tiles")
+				div.col-md-3
+					div(class="tile tile-alt")
+						a(href="#none",class="tile-photo",style="background-image:url(/img/kdj.jpg);background-position:center bottom;")
+						div.tile-details
+							p
+								a(href="/download/NTIKDJ.zip",class="btn btn-inverse download" , alt="KDJ Indicator for Ninjatrader")
+									span(class="fa fa-download") Download
+
+				div.col-md-9
+					div(class="tile ")
+						div.tile-details
+							h2 Description
+							p The KDJ indicator is actually a derived form of the Stochastic with the only difference being an extra line called the J line.
+							p The J line represents the divergence of the %D value from the %K. The value of J can go beyond [0, 100] for %K and %D lines on the chart.
+
+			div(class="row row-tiles")
+				div.col-md-12
+					div(class="tile tile-horizontal")
+						span(class="fa fa-flask")
+						div.tile-details
+							h2 Formula
+							p %K = 100 * (Close-LowestLow[last n periods])/(HighestHigh[last n periods]-LowestLow[last n periods])
+							p %D = MovingAverage(%K)
+			div(class="row row-tiles")
+				div.col-md-12
+					div(class="tile ")
+						div.tile-details
+							h2 How it works
+							p When the oscillator surpasses 80 it`s considered to be overbought. When it goes down 20 it`s considered to be oversold.
+							p Buy signal when J goes under 0 when K and J are in oversold area.
+							p Sell signal when J goes above 100 when K and J are in overbought area.
+							
+		div.clear
+		
+		include ../jade-includes/footer
+		
+		include ../jade-includes/endjs
+	

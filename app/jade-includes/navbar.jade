@@ -1,0 +1,26 @@
+<!-- Google Tag Manager -->
+noscript
+	iframe(src="//www.googletagmanager.com/ns.html?id=GTM-W2C2PF", height="0", width="0", style="display:none;visibility:hidden")
+script.
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W2C2PF');
+<!-- End Google Tag Manager -->
+
+div(class="navbar navbar-inverse navbar-fixed-top ", id="navbar")
+	div.navbar-inner
+		div.container
+			div.row
+				div.col-md-12
+					//- .btn-navbar is used as the toggle for collapsed navbar content
+					a(href="#none", class="navbar-toggle collapsed", data-toggle="collapse", data-target=".navbar-collapse")
+						span(class="fa fa-bars")
+						span.btn-navbar-text Menu
+					a(class="brand", href="/index.html")
+						span.logo 
+						| &nbsp;NTIndicators
+					div(class="navbar-collapse collapse")
+						div(class="nav-menu pull-left")
+							ul(class="nav nav-pills")
+								li: a(href="/ninjatrader-indicators.html") Indicators
+								li: a(href="/contact.html") Contact
+								li: a(href="/sitemap.html") Sitemap
+//- end navbar

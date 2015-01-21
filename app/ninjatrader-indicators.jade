@@ -1,0 +1,230 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title Ninjatrader indicators
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="description", content="Ninjatrader free indicators. Collection of free indicators.")
+		meta(name="author", content="ntindicators")
+		
+		link(href="css/bootstrap.min.css",rel="stylesheet")
+		link(href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css",rel="stylesheet")
+		<!--[if IE 7]>
+		link(rel="stylesheet", href="css/font-awesome-ie7.min.css")
+		<![endif]-->
+		link(rel="stylesheet",type="text/css",href="css/style.css")
+		<!--[if lt IE 9]>
+		script(src="js/html5.js")
+		<![endif]-->
+
+		link(rel="apple-touch-icon-precomposed", sizes="144x144", href="img/sample/logo-144.png")
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/sample/logo-114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/sample/logo-72.png">
+		<link rel="apple-touch-icon-precomposed" href="img/sample/logo-57.png">
+		<link rel="shortcut icon" href="img/sample/logo.png">
+
+	body
+		include jade-includes/navbar
+		div.clear
+		
+		div(class="container-wrapper container-top container-wrapper-sunset")
+			div.container
+				div.row
+					div(class="col-md-12 summary center")
+						h1 Portfolio
+						p.lead Some recent ninjatrader indicators.
+
+		div.container
+			div.row
+				div.col-md-12
+					include jade-includes/adsense1
+			div.row
+				div.col-md-12
+					div.portfolio-wrapper
+						div(class="portfolio-item art")
+							div.portfolio-thumb
+								span(class="portfolio-tag tag-art") McClellan Oscillator
+								a(href="ninjatrader-indicators/mcClellan-oscillator.html")
+									img(src="img/mansfield.jpg" alt="")
+							div.portfolio-body
+								h3
+									a(href="ninjatrader-indicators/mcClellan-oscillator.html") McClellan Oscillator
+								p McClellan Oscillator based in Advanced Declined stocks in the NYSE.
+
+						div(class="portfolio-item art graphic-design")
+							div.portfolio-thumb
+								span(class="portfolio-tag tag-art tag-graphic") KDJ
+								a(href="ninjatrader-indicators/kdj.html")
+									img(src="img/kdj.jpg" alt="")
+							div.portfolio-body
+								h3
+									a(href="ninjatrader-indicators/kdj.html") KDJ Indicator
+								p The KDJ indicator is actually a derived form of the Stochastic with the only difference being an extra line called the J line.
+						div(class="portfolio-item photography")
+							div.portfolio-thumb
+								span(class="portfolio-tag tag-photography") SMI
+								a(href="ninjatrader-indicators/smi.html")
+									img(src="img/smi.jpg" alt="")
+							div.portfolio-body
+								h3
+									a(href="ninjatrader-indicators/smi.html") Stochastic Momentum Index (SMI)
+								p Stochastic developed by William Blau
+						div(class="portfolio-item art")
+							div.portfolio-thumb
+								span(class="portfolio-tag tag-art") Coppock Curve
+								a(href="ninjatrader-indicators/coppock-curve.html")
+									img(src="img/coppock.jpg" alt="")
+							div.portfolio-body
+								h3
+									a(href="ninjatrader-indicators/coppock-curve.html") Coppock Curve
+								p Long term trend following indicator.
+
+						div(class="portfolio-item art graphic-design")
+							div.portfolio-thumb
+								span(class="portfolio-tag tag-art tag-graphic") Moving Average Confluence
+								a(href="ninjatrader-indicators/moving-average-confluence.html")
+									img(src="img/moving-average-confluence.jpg" alt="")
+							div.portfolio-body
+								h3
+									a(href="ninjatrader-indicators/moving-average-confluence.html") Moving Average Confluence
+								p Indicator based in several moving average crosses.
+						div(class="portfolio-item photography")
+							div.portfolio-thumb
+								span(class="portfolio-tag tag-photography") Proportional Average Capital
+								a(href="ninjatrader-indicators/proportional-average-capital.html")
+									img(src="img/average-capital.jpg" alt="")
+							div.portfolio-body
+								h3
+									a(href="ninjatrader-indicators/proportional-average-capital.html") Proportional Average Capital
+								p Weighted volume indicator.
+						div(class="portfolio-item art")
+							div.portfolio-thumb
+								span(class="portfolio-tag tag-art") Force Index
+								a(href="ninjatrader-indicators/force-index.html")
+									img(src="img/force-index.jpg" alt="")
+							div.portfolio-body
+								h3
+									a(href="ninjatrader-indicators/force-index.html") Force Index
+								p The Force Index is an indicator that uses price and volume to assess the power behind a move or identify possible turning points.
+
+						div(class="portfolio-item art graphic-design")
+							div.portfolio-thumb
+								span(class="portfolio-tag tag-art tag-graphic") Colored Moving Average
+								a(href="ninjatrader-indicators/colored-moving-average.html")
+									img(src="img/colored-average.jpg" alt="")
+							div.portfolio-body
+								h3
+									a(href="ninjatrader-indicators/colored-moving-average.html") Colored Moving Average
+								p Colored moving average. Changes color when rising or falling. Available for SMA, EMA and WMA.
+						div(class="portfolio-item photography")
+							div.portfolio-thumb
+								span(class="portfolio-tag tag-photography") RSC Mansfield
+								a(href="ninjatrader-indicators/mansfield-relative-strength.html")
+									img(src="img/mansfield.jpg" alt="")
+							div.portfolio-body
+								h3
+									a(href="ninjatrader-indicators/mansfield-relative-strength.html") Mansfield Relative Strength (RSC Mansfield)
+								p This indicator shows visually the strength of an equity in relation to a reference index.
+						div(class="portfolio-item art")
+							div.portfolio-thumb
+								span(class="portfolio-tag tag-art") OHLC Average
+								a(href="ninjatrader-indicators/ohlc-average.html")
+									img(src="img/ohlc.jpg" alt="")
+							div.portfolio-body
+								h3
+									a(href="ninjatrader-indicators/ohlc-average.html") OHLC Average
+								p This indicator draws a dot over the price the OHLC/4 point.
+						div(class="portfolio-item art")
+							div.portfolio-thumb
+								span(class="portfolio-tag tag-art") Smoothed Moving Average
+								a(href="ninjatrader-indicators/smma.html")
+									img(src="img/smma.jpg" alt="")
+							div.portfolio-body
+								h3
+									a(href="ninjatrader-indicators/smma.html") Smoothed Moving Average
+								p Moving average that includes in its formula all historic prices.
+						
+		div.clear
+		
+		include jade-includes/footer
+		
+		include jade-includes/endjs
+		
+		script(src="js/jquery.isotope.min.js")
+		
+		script.
+			$(document).ready(function() {
+        
+			$('#navbar').affix();
+        
+			$('.dropdown-toggle').dropdown();
+        
+			var $container = $('.portfolio-wrapper');
+        
+			$container.imagesLoaded( function(){
+				$container.isotope({
+					itemSelector : '.portfolio-item',
+					layoutMode : 'fitRows'
+				});
+			});
+        
+			// Needed functions
+			var getColWidth = function() {
+				var width,
+				windowWidth = $(window).width();
+
+			if( $('body').hasClass( 'page-template-template-portfolio-2col-php' ) ) {
+				if( windowWidth <= 480 ) {
+					width = Math.floor( $container.width() );
+				} else {
+					width = Math.floor( $container.width() / 2 );
+				}
+			} else {
+				if( windowWidth <= 480 ) {
+					width = Math.floor( $container.width() );
+				} else if( windowWidth <= 768 ) {
+					width = Math.floor( $container.width() );
+				} else {
+					width = Math.floor( $container.width() / 3 - 20 );
+				}
+			}
+
+			return width;
+			}
+
+			function setWidths() {
+				var colWidth = getColWidth();
+				$container.children().css({ width: colWidth });
+			}
+
+			setWidths();
+    
+			$(window).smartresize(function() {
+				setWidths();
+				$container.isotope({
+					masonry: {
+					columnWidth: getColWidth()
+				}
+				});
+			});
+        
+			$('.filter-portfolio li a').click(function(){
+				$('.filter-portfolio li.active').removeClass('active');
+				$(this).parent('li').addClass('active');
+				var selector = $(this).attr('data-filter');
+				$container.isotope({
+					filter: selector,
+						masonry: { columnWidth: $container.width() / 3 }
+				});
+			return false;
+			});
+			// update columnWidth on window resize
+			$(window).smartresize(function(){
+				$container.isotope({
+					// update columnWidth to a percentage of container width
+					masonry: { columnWidth: $container.width() / 3 }
+				});
+			});
+        
+			});
+	

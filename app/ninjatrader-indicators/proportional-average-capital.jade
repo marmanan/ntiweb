@@ -1,0 +1,80 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title Proportional Average Capital - Ninjatrader indicators
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="description", content="Proportional Average Capital indicator free for ninjatrader. Shows volume trend.")
+		meta(name="author", content="ntindicators")
+		
+		link(href="/css/bootstrap.min.css",rel="stylesheet")
+		link(href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css",rel="stylesheet")
+		<!--[if IE 7]>
+		link(rel="stylesheet", href="/css/font-awesome-ie7.min.css")
+		<![endif]-->
+		link(rel="stylesheet",type="text/css",href="/css/style.css")
+		<!--[if lt IE 9]>
+		script(src="/js/html5.js")
+		<![endif]-->
+
+		link(rel="apple-touch-icon-precomposed", sizes="144x144", href="/img/sample/logo-144.png")
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/sample/logo-114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/sample/logo-72.png">
+		<link rel="apple-touch-icon-precomposed" href="/img/sample/logo-57.png">
+		<link rel="shortcut icon" href="/img/sample/logo.png">
+
+	body
+		include ../jade-includes/navbar
+		div.clear
+		
+		div(class="container-wrapper container-top container-wrapper-sunset")
+			div.container
+				div.row
+					div(class="col-md-12 summary center")
+						h1 Proportional Average Capital
+		div.container
+			div(class="row row-tiles")
+				div.col-md-12
+					include ../jade-includes/adsense1
+			div(class="row row-tiles")
+				div.col-md-3
+					div(class="tile tile-alt")
+						a(href="#none",class="tile-photo",style="background-image:url(/img/average-capital.jpg);background-position:center bottom;")
+						div.tile-details
+							p
+								a(href="/download/NTIAvCapital.zip",class="btn btn-inverse download", alt="Proportional Average Capital indicator for Ninjatrader")
+									span(class="fa fa-download") Download
+
+				div.col-md-9
+					div(class="tile ")
+						div.tile-details
+							h2 Description
+							p Proportional Average Capital indicator was created by Javier Alfayate and released in his book Aleta de tiburon.
+							p Weighted Volume ratio based in the volume equity pondered by its price.
+			div(class="row row-tiles")
+				div.col-md-12
+					div(class="tile tile-horizontal")
+						span(class="fa fa-flask")
+						div.tile-details
+							h2 Formula
+							p CPM = volume * close
+							p volmax = highest [v] (CPM)
+							p vol = ((CPM * 100 / volmax) * 4 / 5)
+							p volpmed = ExponentialAverage [v] (vol)
+							p CPM2 = (vol - volpmed)
+							p return CPM2 as "CPM"
+			div(class="row row-tiles")
+				div.col-md-12
+					div(class="tile ")
+						div.tile-details
+							h2 How it works
+							p This is a volume indicator that takes into account the variation of the volume data meaning after a big price change.
+							p When an equity rallies quickly or lose a 90% of its price the volume data meaning is altered significally. Because with the same money it's possible to buy more or less volume of stocks than before.
+							p A significant increase on the indicator value anticipate a violent movement on equity price.
+							
+		div.clear
+		
+		include ../jade-includes/footer
+		
+		include ../jade-includes/endjs
+	

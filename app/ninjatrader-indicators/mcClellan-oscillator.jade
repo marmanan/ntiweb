@@ -1,0 +1,77 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title MCClellan Oscillator - Ninjatrader indicators
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="description", content="McClellan free oscillator for ninjatrader. Market breath indicator.")
+		meta(name="author", content="ntindicators")
+		
+		link(href="/css/bootstrap.min.css",rel="stylesheet")
+		link(href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css",rel="stylesheet")
+		<!--[if IE 7]>
+		link(rel="stylesheet", href="/css/font-awesome-ie7.min.css")
+		<![endif]-->
+		link(rel="stylesheet",type="text/css",href="/css/style.css")
+		<!--[if lt IE 9]>
+		script(src="/js/html5.js")
+		<![endif]-->
+
+		link(rel="apple-touch-icon-precomposed", sizes="144x144", href="/img/sample/logo-144.png")
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/sample/logo-114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/sample/logo-72.png">
+		<link rel="apple-touch-icon-precomposed" href="/img/sample/logo-57.png">
+		<link rel="shortcut icon" href="/img/sample/logo.png">
+
+	body
+		include ../jade-includes/navbar
+		div.clear
+		
+		div(class="container-wrapper container-top container-wrapper-sunset")
+			div.container
+				div.row
+					div(class="col-md-12 summary center")
+						h1 McClellan Oscillator
+		div.container
+			div(class="row row-tiles")
+				div.col-md-12
+					include ../jade-includes/adsense1
+			div(class="row row-tiles")
+				div.col-md-3
+					div(class="tile tile-alt")
+						a(href="#none",class="tile-photo",style="background-image:url(/img/mcoscillator.jpg);background-position:center bottom;")
+						div.tile-details
+							p
+								a(href="/download/NTIMcClellanOscillator.zip",class="btn btn-inverse download", alt="McClellanOscillator for Ninjatrader")
+									span(class="fa fa-download") Download
+
+				div.col-md-9
+					div(class="tile ")
+						div.tile-details
+							h2 Description
+							p The McClellan oscillator is a market breadth indicator based in the number of stocks that closed higher (advances) and that closed lower (declines) in the New York Stock Exchange. 
+							p Developed by Sherman and Marian McClellan in 1969, the oscillator is computed using the exponential moving average (EMA) of the daily ordinal difference of advancing issues (stocks which gained in value) from declining issues (stocks which fell in value) over 39 trading day and 19 trading day periods.
+
+			div(class="row row-tiles")
+				div.col-md-12
+					div(class="tile tile-horizontal")
+						span(class="fa fa-flask")
+						div.tile-details
+							h2 Formula
+							p Base = NYSE Advances - NYSE Declines.
+							p McClellan Oscillator = 19 day EMA of Base - 39 day EMA of Base.
+			div(class="row row-tiles")
+				div.col-md-12
+					div(class="tile ")
+						div.tile-details
+							h2 How it works
+							p The McClellan Oscillator offers many types of structures for interpretation, but there are two main ones. First, when the Oscillator is positive, it generally portrays money coming into the market; conversely, when it is negative, it reflects money leaving the market. Second, when the oscillator reaches extreme readings, it can reflect an overbought or oversold condition.
+							p Divergences between price and Oscillator can be used to detect trend changes. Many more important structures are outlined in the book Patterns For Profit by Sherman and Marian McClellan.To use this indicator in your NinjaTrader you need to have the ^ADD instrument.
+
+							
+		div.clear
+		
+		include ../jade-includes/footer
+		
+		include ../jade-includes/endjs
+	

@@ -1,0 +1,76 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title Coppock Curve - Ninjatrader indicators
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="description", content="Coppock Curve indicator free for ninjatrader. Indicator for long time trading.")
+		meta(name="author", content="ntindicators")
+		
+		link(href="/css/bootstrap.min.css",rel="stylesheet")
+		link(href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css",rel="stylesheet")
+		<!--[if IE 7]>
+		link(rel="stylesheet", href="/css/font-awesome-ie7.min.css")
+		<![endif]-->
+		link(rel="stylesheet",type="text/css",href="/css/style.css")
+		<!--[if lt IE 9]>
+		script(src="/js/html5.js")
+		<![endif]-->
+
+		link(rel="apple-touch-icon-precomposed", sizes="144x144", href="/img/sample/logo-144.png")
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/sample/logo-114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/sample/logo-72.png">
+		<link rel="apple-touch-icon-precomposed" href="/img/sample/logo-57.png">
+		<link rel="shortcut icon" href="/img/sample/logo.png">
+
+	body
+		include ../jade-includes/navbar
+		div.clear
+		
+		div(class="container-wrapper container-top container-wrapper-sunset")
+			div.container
+				div.row
+					div(class="col-md-12 summary center")
+						h1 Coppock Curve
+		div.container
+			div(class="row row-tiles")
+				div.col-md-12
+					include ../jade-includes/adsense1
+			div(class="row row-tiles")
+				div.col-md-3
+					div(class="tile tile-alt")
+						a(href="#none",class="tile-photo",style="background-image:url(/img/coppock.jpg);background-position:center bottom;")
+						div.tile-details
+							p
+								a(href="/download/NTICoppockCurve.zip",class="btn btn-inverse download", alt="Coppock Curve Indicator for Ninjatrader")
+									span(class="fa fa-download") Download
+
+				div.col-md-9
+					div(class="tile ")
+						div.tile-details
+							h2 Description
+							p The Coppock Curve is a long-term indicator created by E.S.C Coppock, first published in Barron's magazine on October 15th, 1962.
+							p The indicator is designed for use on a monthly time scale. It's the sum of a 14-month rate of change and 11-month rate of change, smoothed by a 10-period weighted moving average.
+							p Coppock, the founder of Trendex Research in San Antonio, Texas, was an economist. He had been asked by the Episcopal Church to identify buying opportunities for long-term investors. He thought market downturns were like bereavements and required a period of mourning. He asked the church bishops how long that normally took for people, their answer was 11 to 14 months and so he used those periods in his calculation.
+			div(class="row row-tiles")
+				div.col-md-12
+					div(class="tile tile-horizontal")
+						span(class="fa fa-flask")
+						div.tile-details
+							h2 Formula
+							p Coppock = WMA(ROC[14] + ROC[11])[10]
+			div(class="row row-tiles")
+				div.col-md-12
+					div(class="tile ")
+						div.tile-details
+							h2 How it works
+							p A buy signal is generated when the indicator is below zero and turns upwards from a trough.
+							p No sell signals are generated (that not being its design).
+							p The indicator is trend-following, and based on averages, so by its nature it doesn't pick a market bottom, but rather shows when a rally has become established.
+							
+		div.clear
+		
+		include ../jade-includes/footer
+		
+		include ../jade-includes/endjs
+	

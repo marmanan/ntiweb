@@ -1,0 +1,75 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title Moving Average Confluence - Ninjatrader indicators
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="description", content="Moving Average Confluence indicator free for ninjatrader. Indicator based in a group of averages.")
+		meta(name="author", content="ntindicators")
+		
+		link(href="/css/bootstrap.min.css",rel="stylesheet")
+		link(href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css",rel="stylesheet")
+		<!--[if IE 7]>
+		link(rel="stylesheet", href="/css/font-awesome-ie7.min.css")
+		<![endif]-->
+		link(rel="stylesheet",type="text/css",href="/css/style.css")
+		<!--[if lt IE 9]>
+		script(src="/js/html5.js")
+		<![endif]-->
+
+		link(rel="apple-touch-icon-precomposed", sizes="144x144", href="/img/sample/logo-144.png")
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/sample/logo-114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/sample/logo-72.png">
+		<link rel="apple-touch-icon-precomposed" href="/img/sample/logo-57.png">
+		<link rel="shortcut icon" href="/img/sample/logo.png">
+
+	body
+		include ../jade-includes/navbar
+		div.clear
+		
+		div(class="container-wrapper container-top container-wrapper-sunset")
+			div.container
+				div.row
+					div(class="col-md-12 summary center")
+						h1 Moving Average Confluence
+		div.container
+			div(class="row row-tiles")
+				div.col-md-12
+					include ../jade-includes/adsense1
+			div(class="row row-tiles")
+				div.col-md-3
+					div(class="tile tile-alt")
+						a(href="#none",class="tile-photo",style="background-image:url(/img/moving-average-confluence.jpg);background-position:center bottom;")
+						div.tile-details
+							p
+								a(href="/download/NTIMovingAverageConfluence.zip",class="btn btn-inverse download", alt="Moving Average Confluence Indicator for Ninjatrader")
+									span(class="fa fa-download") Download
+
+				div.col-md-9
+					div(class="tile ")
+						div.tile-details
+							h2 Description
+							p Moving Average Confluence indicator was created by Lars Kestner and released in his book Quantitative Trading Strategies.
+							p The indicator calculate the bullish trend and bearish trend of a market using moving average crossings.
+			div(class="row row-tiles")
+				div.col-md-12
+					div(class="tile tile-horizontal")
+						span(class="fa fa-flask")
+						div.tile-details
+							h2 Formula
+							p It calculates twenty moving average crossings between shorts from 1 to 20 and longs from 4 to 80. For each short moving average above its long moving average add 5 points to the indicator. 
+							p So the indicator moves from 0 to 100.
+			div(class="row row-tiles")
+				div.col-md-12
+					div(class="tile ")
+						div.tile-details
+							h2 How it works
+							p Buy signals are produced when the indicator moves above 60.
+							p Sell signals when the indicator goes under 40.
+							
+		div.clear
+		
+		include ../jade-includes/footer
+		
+		include ../jade-includes/endjs
+	

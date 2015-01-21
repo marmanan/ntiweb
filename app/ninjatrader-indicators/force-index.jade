@@ -1,0 +1,83 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title Force Index - Ninjatrader indicators
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="description", content="Force Index free for ninjatrader. This indicator shows trend strength.")
+		meta(name="author", content="ntindicators")
+		
+		link(href="/css/bootstrap.min.css",rel="stylesheet")
+		link(href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css",rel="stylesheet")
+		<!--[if IE 7]>
+		link(rel="stylesheet", href="/css/font-awesome-ie7.min.css")
+		<![endif]-->
+		link(rel="stylesheet",type="text/css",href="/css/style.css")
+		<!--[if lt IE 9]>
+		script(src="/js/html5.js")
+		<![endif]-->
+
+		link(rel="apple-touch-icon-precomposed", sizes="144x144", href="/img/sample/logo-144.png")
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/sample/logo-114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/sample/logo-72.png">
+		<link rel="apple-touch-icon-precomposed" href="/img/sample/logo-57.png">
+		<link rel="shortcut icon" href="/img/sample/logo.png">
+
+	body
+		include ../jade-includes/navbar
+		div.clear
+		
+		div(class="container-wrapper container-top container-wrapper-sunset")
+			div.container
+				div.row
+					div(class="col-md-12 summary center")
+						h1 Force Index
+		div.container
+			div(class="row row-tiles")
+				div.col-md-12
+					include ../jade-includes/adsense1
+			div(class="row row-tiles")
+				div.col-md-3
+					div(class="tile tile-alt")
+						a(href="#none",class="tile-photo",style="background-image:url(/img/force-index.jpg);background-position:center bottom;")
+						div.tile-details
+							p
+								a(href="/download/NTIForceIndex.zip",class="btn btn-inverse download", alt="Force Index indicator for Ninjatrader")
+									span(class="fa fa-download") Download
+
+				div.col-md-9
+					div(class="tile ")
+						div.tile-details
+							h2 Description
+							p The Force Index is an indicator that uses price and volume to assess the power behind a move or identify possible turning points.
+							p Developed by Alexander Elder, the Force Index was introduced in his classic book, Trading for a Living.
+							p According to Elder, there are three essential elements to a stock's price movement: direction, extent and volume. The Force Index combines all three as an oscillator that fluctuates in positive and negative territory as the balance of power shifts. The Force Index can be used to reinforce the overall trend, identify playable corrections or foreshadow reversals with divergences.
+			div(class="row row-tiles")
+				div.col-md-12
+					div(class="tile tile-horizontal")
+						span(class="fa fa-flask")
+						div.tile-details
+							h2 Formula
+							p Force Index(1) = {Close (current period) - Close (prior period)} x Volume
+							p Force Index(13) = 13-period EMA of Force Index(1)
+			div(class="row row-tiles")
+				div.col-md-12
+					div(class="tile ")
+						div.tile-details
+							h2 How it works
+							p 
+								strong Trend identification
+							p The Force Index can be used to reinforce or determine the trend. The trend in question, short-term, medium-term or long-term, depends on the Force Index parameters. While the default Force Index parameter is 13, chartists can use a higher number for more smoothing or a lower number for less smoothing.
+							p 
+								strong Divergences
+							p Bullish and bearish divergence can alert chartists of a potential trend change. Divergences are classic signals associate with oscillators. A bullish divergence forms when the indicator moves higher as the security moves lower. The indicator is not confirming weakness in price and this can foreshadow a bullish trend reversal. A bearish divergence forms when the indicator moves lower as the security moves higher. Even though the security is moving higher, the indicator shows underlying weakness by moving lower. This discrepancy can foreshadow a bearish trend reversal. Confirmation is an important part of bullish and bearish divergences. Even though the divergences signal something is amiss, confirmation from the indicator or price chart is needed. A bullish divergence can be confirmed with the Force Index moving into positive territory or a resistance breakout on the price chart. A bearish divergence can be confirmed with the Force Index moving into negative territory or a support break on the price chart. Chartists can also use candlesticks, moving average crosses, pattern breaks and other forms of technical analysis for confirmation.
+							p
+								strong Identifying corrections
+							p The Force Index can be used in conjunction with a trend following indicator to identify short-term corrections within that trend. A pullback from overbought levels represents a short-term correction within an uptrend. An oversold bounce represents a short-term correction within a downtrend. Yes, corrections can be up or down, it depends on the direction of the bigger trend. Alexander Elder recommends using a 22-day EMA for trend identification and a 2-day Force Index to identify corrections. The trend is up when the 22-day EMA is moving higher, which means the 2-day Force Index would be used to identify short-term pullbacks for buying. The trend is down when the 22-day EMA is moving lower, which means the 2-day Force Index would be used to identify short-term bounces for selling. This is an aggressive strategy best suiting for active traders. The timeframe can be adjusted by using a longer moving average and timeframe for the Force Index. For example, medium-term traders might experiment with a 100-day EMA and 10-day Force Index. There are two-schools of thought regarding the correction play. Traders can either act as soon as the correction is evident or act when there is evidence the correction has ended.
+							
+		div.clear
+		
+		include ../jade-includes/footer
+		
+		include ../jade-includes/endjs
+	

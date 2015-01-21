@@ -1,0 +1,92 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title NTindicators Contact Form
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="description", content="Ninjatrader free indicators. Contact us if you need someone to code your indicator or strategy for NinjaTrader.")
+		meta(name="author", content="ntindicators")
+		
+		link(href="css/bootstrap.min.css",rel="stylesheet")
+		link(href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css",rel="stylesheet")
+		<!--[if IE 7]>
+		link(rel="stylesheet", href="css/font-awesome-ie7.min.css")
+		<![endif]-->
+		link(rel="stylesheet",type="text/css",href="css/style.css")
+		<!--[if lt IE 9]>
+		script(src="js/html5.js")
+		<![endif]-->
+
+		script(src='https://cdn.firebase.com/js/client/1.0.15/firebase.js')
+
+		link(rel="apple-touch-icon-precomposed", sizes="144x144", href="img/sample/logo-144.png")
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/sample/logo-114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/sample/logo-72.png">
+		<link rel="apple-touch-icon-precomposed" href="img/sample/logo-57.png">
+		<link rel="shortcut icon" href="img/sample/logo.png">
+
+	body
+		include jade-includes/navbar
+		div.clear
+		
+		div(class="container-wrapper container-top container-wrapper-winter")
+			div(class="container container-top")
+				div.row
+					div(class="col-md-12 center")
+						h1 Contact
+		div.container
+			div.row
+				div.col-md-9
+					h2 Send us a message
+					form(class="form-horizontal form-contact", id="contactform")
+						div(class="alert alert-success hide", id="alertmessage")
+							button(type="button", class="close", data-dismiss="alert") ×
+							strong Your message has been sent!  
+							| We will contact you soon.
+						div.form-group
+							label(class="control-label", for="inputName") Name
+							div.controls
+								div.row
+									div.col-md-6
+										input(type="text", id="inputName", placeholder="Name", class="form-control")
+						div.form-group
+							label(class="control-label", for="inputEmail") Email Address
+							div.controls
+								div.row
+									div.col-md-6
+										input(type="text", id="inputEmail", placeholder="Email Address", class="form-control")
+						div.form-group
+							label(class="control-label", for="inputMessage") Message
+							div.controls
+								div.row
+									div.col-md-10
+										textarea(id="inputMessage", placeholder="Your Message", class="form-control", rows="10")
+						div(class="form-actions form-actions-no-bg")
+							button(type="button", class="btn btn-lg btn-purple",id="sendbutton") Send Message
+
+				div(class="col-md-3 sidebar")
+					div.widget
+						h2 Contact Details
+						ul.fa-ul
+							li
+								i(class="fa-li fa fa-twitter")
+								a(href="http://www.twitter.com/ntindicators") www.twitter.com/ntindicators
+							li
+								i(class="fa-li fa fa-envelope")
+								a(href="mailto:contact@ntindicators.com") contact@ntindicators.com
+		div.clear
+
+		include jade-includes/footer
+		
+		include jade-includes/endjs
+
+		script.
+			var myDataRef = new Firebase('https://nti-contact.firebaseio.com/');
+			$('#sendbutton').click(function (e) {
+				var name = $('#inputName').val();
+				var mail = $('#inputEmail').val();
+				var text = $('#inputMessage').val();
+				myDataRef.push({name: name, email: mail, message: text});
+				$('#alertmessage').removeClass('hide');
+				$('#contactform')[0].reset();
+			});

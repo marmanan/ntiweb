@@ -1,0 +1,83 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title Smoothed Moving Average - Ninjatrader indicators
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="description", content="SMMA free for ninjatrader. Moving average that takes into account all historic prices")
+		meta(name="author", content="ntindicators")
+		
+		link(href="/css/bootstrap.min.css",rel="stylesheet")
+		link(href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css",rel="stylesheet")
+		<!--[if IE 7]>
+		link(rel="stylesheet", href="/css/font-awesome-ie7.min.css")
+		<![endif]-->
+		link(rel="stylesheet",type="text/css",href="/css/style.css")
+		<!--[if lt IE 9]>
+		script(src="/js/html5.js")
+		<![endif]-->
+
+		link(rel="apple-touch-icon-precomposed", sizes="144x144", href="/img/sample/logo-144.png")
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/sample/logo-114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/sample/logo-72.png">
+		<link rel="apple-touch-icon-precomposed" href="/img/sample/logo-57.png">
+		<link rel="shortcut icon" href="/img/sample/logo.png">
+
+	body
+		include ../jade-includes/navbar
+		div.clear
+		
+		div(class="container-wrapper container-top container-wrapper-sunset")
+			div.container
+				div.row
+					div(class="col-md-12 summary center")
+						h1 Smoothed Moving Average (SMMA)
+		div.container
+			div(class="row row-tiles")
+				div.col-md-12
+					include ../jade-includes/adsense1
+			div(class="row row-tiles")
+				div.col-md-3
+					div(class="tile tile-alt")
+						a(href="#none",class="tile-photo",style="background-image:url(/img/smma.jpg);background-position:left bottom;")
+						div.tile-details
+							p
+								a(href="/download/NTISMMA.zip",class="btn btn-inverse download", alt="SMMA Indicator for Ninjatrader")
+									span(class="fa fa-download") Download
+
+				div.col-md-9
+					div(class="tile ")
+						div.tile-details
+							h2 Description
+							p The SMMA gives recent prices an equal weighting to historic prices. The calculation takes all available data series into account rather than referring to a fixed period. This is achieved by subtracting the prior periods SMMA from the current periods price. Adding this result to yesterday’s Smoothed Moving Average gives today’s Moving Average.
+			div(class="row row-tiles")
+				div.col-md-12
+					div(class="tile tile-horizontal")
+						span(class="fa fa-flask")
+						div.tile-details
+							h2 Formula
+							p The first value for the Smoothed Moving Average is calculated as a Simple Moving Average (SMA):
+							p SUM1=SUM (CLOSE, N)
+							p SMMA1 = SUM1/ N
+							p The second and subsequent moving averages are calculated according to this formula:
+							p SMMA (i) = (SUM1 – SMMA1+CLOSE (i))/ N
+							p Where:
+							p SUM1 – is the total sum of closing prices for N periods;
+							p SMMA1 – is the smoothed moving average of the first bar;
+							p SMMA (i) – is the smoothed moving average of the current bar (except the first one);
+							p CLOSE (i) – is the current closing price;
+							p N – is the smoothing period.
+			div(class="row row-tiles")
+				div.col-md-12
+					div(class="tile ")
+						div.tile-details
+							h2 How it works
+							p Price crossovers: A Price crossover is a term applied when a signal is generated where the price crosses a moving average. Bullish signals are given when the price moves above the moving average, bearish signals are given when the price moves below the moving average. Crossover trades are more likely to enjoy success when the moving average slopes are in the direction of the trade.
+							p Support and Resistance: Moving averages can also act as a support level in an uptrend and resistance levels in a downtrend. If the average is widely followed orders in favor of the trend often cluster around the average. As markets are often driven by emotion and many players trade counter to the trend expect overshoots, to this extent the average should be used to identify support and resistance zones rather than exact levels.
+							
+		div.clear
+		
+		include ../jade-includes/footer
+		
+		include ../jade-includes/endjs
+	

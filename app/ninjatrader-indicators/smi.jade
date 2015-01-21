@@ -1,0 +1,77 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title Stochastic Momentum Index - Ninjatrader indicators
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="description", content="SMI free for ninjatrader. Stochastic used to detect trend strength.")
+		meta(name="author", content="ntindicators")
+		
+		link(href="/css/bootstrap.min.css",rel="stylesheet")
+		link(href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css",rel="stylesheet")
+		<!--[if IE 7]>
+		link(rel="stylesheet", href="/css/font-awesome-ie7.min.css")
+		<![endif]-->
+		link(rel="stylesheet",type="text/css",href="/css/style.css")
+		<!--[if lt IE 9]>
+		script(src="/js/html5.js")
+		<![endif]-->
+
+		link(rel="apple-touch-icon-precomposed", sizes="144x144", href="/img/sample/logo-144.png")
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/sample/logo-114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/sample/logo-72.png">
+		<link rel="apple-touch-icon-precomposed" href="/img/sample/logo-57.png">
+		<link rel="shortcut icon" href="/img/sample/logo.png">
+
+	body
+		include ../jade-includes/navbar
+		div.clear
+		
+		div(class="container-wrapper container-top container-wrapper-sunset")
+			div.container
+				div.row
+					div(class="col-md-12 summary center")
+						h1 Stochastic Momentum Index
+		div.container
+			div(class="row row-tiles")
+				div.col-md-12
+					include ../jade-includes/adsense1
+			div(class="row row-tiles")
+				div.col-md-3
+					div(class="tile tile-alt")
+						a(href="#none",class="tile-photo",style="background-image:url(/img/smi.jpg);background-position:center bottom;")
+						div.tile-details
+							p
+								a(href="/download/NTISMI.zip",class="btn btn-inverse download", alt="SMI Indicator for Ninjatrader")
+									span(class="fa fa-download") Download
+
+				div.col-md-9
+					div(class="tile ")
+						div.tile-details
+							h2 Description
+							p The stochastic, it's a very popular indicator between traders and has inspired the development of new indicators based in the original one. One of this is the Stochastic Momentum Idex (SMI).
+							p The SMI indicator was developed by William Blau ad presented in Technical Analysis of Stocks & Commodities magazine in 1993, ten years after the original stochastic.
+							p The stochastic is based in the position of price relative to the range between the lowest low and the highest high in period. However, Stochastic Momentum Idex uses the middle point of the range as the base of its calculation.
+			div(class="row row-tiles")
+				div.col-md-12
+					div(class="tile tile-horizontal")
+						span(class="fa fa-flask")
+						div.tile-details
+							h2 Formula
+							p SMI(q,r,s) = 100 * (EMA(EMA(SM[q])[r]))[s] / 0,5*(EMA(EMA(HighestHigh[q]-LowestLow[q])[r])[s])
+							p EMA[period] = Exponential Moving Average of period
+			div(class="row row-tiles")
+				div.col-md-12
+					div(class="tile ")
+						div.tile-details
+							h2 How it works
+							p Indicator moves between -100 and +100. When the SMI is above +40 is considered to be overbought. When the SMI is under -40 is considered to be over sold.
+							p An important signal is the crossing of SMI and its average. When the indicator is above its average trend is bullish. When the indicator is under its average the trend is bearish.
+							p But the most important signals are the divergences between the indicator and the price.
+							
+		div.clear
+		
+		include ../jade-includes/footer
+		
+		include ../jade-includes/endjs
+	

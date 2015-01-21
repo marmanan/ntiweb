@@ -1,0 +1,108 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title NTindicators Home
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="description", content="Free indicators for NinjaTrader, in this site you can find free stuff to improve your trading")
+		meta(name="author", content="ntindicators")
+		
+		link(href="css/bootstrap.min.css",rel="stylesheet")
+		link(href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css",rel="stylesheet")
+		<!--[if IE 7]>
+		link(rel="stylesheet", href="css/font-awesome-ie7.min.css")
+		<![endif]-->
+		link(rel="stylesheet",type="text/css",href="css/style.css")
+		<!--[if lt IE 9]>
+		script(src="js/html5.js")
+		<![endif]-->
+		link(rel="canonical", href="/")
+		link(rel="apple-touch-icon-precomposed", sizes="144x144", href="img/sample/logo-144.png")
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/sample/logo-114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/sample/logo-72.png">
+		<link rel="apple-touch-icon-precomposed" href="img/sample/logo-57.png">
+		<link rel="shortcut icon" href="img/sample/logo.png">
+
+	body
+		include jade-includes/navbar
+		div.clear
+		
+		div(id="myCarousel", class="container-wrapper container-top container-wrapper-home carousel slide", data-ride="carousel")
+			//- Indicators 
+			div.carousel-inner
+				div(class="item active")
+					div.container
+						div.carousel-caption
+							div.row
+								div(class="col-md-6 text-left")
+									h1 Free NinjaTrader Indicators
+									p.lead We love trading and we like NinjaTrader. Here you can find some free NinjaTrader resourses. 
+									p: a(class="btn btn-lg btn-success", href="contact.html") Contact
+								div.col-md-6
+									img(src="img/home_desktop.png", alt="")
+		
+		div.clear
+		
+		div.container-wrapper
+			div.container
+				div(class="row margin-bottom-20")
+					div(class="col-md-12 center")
+						h2 Features
+				div.row
+					div(class="col-md-4 center")
+						span(class="fa fa-suitcase fa-5x blue")
+						h3(class="margin-top-10") Free Indicators
+						p You can find here some NinjaTrader indicators for free.
+						p: a(href="http://pukekodesigns.co.nz/clients/zion/elements.html", class="btn btn-lg btn-purple") Indicators
+					div(class="col-md-4 center")
+						span(class="fa fa-gears fa-5x")
+						h3(class="margin-top-10") Custom Indicators
+						p If you need a custom indicator for improve your trading system we can develop it for you.
+						p: a(href="http://pukekodesigns.co.nz/clients/zion/features.html", class="btn btn-lg btn-primary") Contact
+					div(class="col-md-4 center")
+						span(class="fa fa-heart fa-5x red")
+						h3(class="margin-top-10") Custom Strategies
+						p If you have a system to gain the market we can code it for you.
+						p: a(href="https://wrapbootstrap.com/theme/zion-responsive-template-WB0522F10", class="btn btn-lg btn-success") Begin making money
+		
+		div.clear
+		
+		div.container
+			div(class="row margin-bottom-20")
+				div(class="col-md-12 center")
+					h2 Lastest indicators
+			div(class="row row-tiles")
+				div(class="col-md-3")
+					div(class="tile tile-alt")
+						a(href="/ninjatrader-indicators/smi.html", class="tile-photo", style="background-image:url(img/smi.jpg);background-position:center bottom;")
+						div.tile-details
+							h3 Stochastic Momentum Index (SMI)
+							p Stochastic developed by William Blau.
+							p: a(href="/ninjatrader-indicators/smi.html", class="btn btn-info") Read More
+				div(class="col-md-3")
+					div(class="tile tile-alt")
+						a(href="/ninjatrader-indicators/kdj.html", class="tile-photo", style="background-image:url( img/kdj.jpg);background-position:center bottom;")
+						div.tile-details
+							h3 KDJ Indicator
+							p Derived form of the Stochastic with the only difference being an extra line called the J.
+							p: a(href="/ninjatrader-indicators/kdj.html", class="btn btn-info") Read More
+				div(class="col-md-3")
+					div(class="tile tile-alt")
+						a(href="/ninjatrader-indicators/mcClellan-oscillator.html", class="tile-photo", style="background-image:url( img/mcoscillator.jpg);background-position:center bottom;")
+						div.tile-details
+							h3 McClellan Oscillator
+							p McClellan Oscillator based in Advanced Declined stocks in the NYSE.
+							p: a(href="/ninjatrader-indicators/mcClellan-oscillator.html", class="btn btn-info") Read More
+				div(class="col-md-3")
+					div(class="tile tile-alt")
+						a(href="/ninjatrader-indicators/smma.html", class="tile-photo", style="background-image:url( img/smma.jpg);background-position:left bottom;")
+						div.tile-details
+							h3 Smoothed Moving Average (SMMA)
+							p Moving average that includes in its formula all historic prices.
+							p: a(href="/ninjatrader-indicators/smma.html", class="btn btn-info") Read More
+							
+		div.clear
+		
+		include jade-includes/footer
+		
+		include jade-includes/endjs
